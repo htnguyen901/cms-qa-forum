@@ -17,13 +17,12 @@ namespace CMS.Models
         {
         }
 
-        public virtual DbSet<Account> Accounts { get; set; }
+        
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<File> Files { get; set; }
-        public virtual DbSet<Idea> Ideas { get; set; }
-        public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<Idea> Ideas { get; set; }        
         public virtual DbSet<Reaction> Reactions { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Submission> Submissions { get; set; }
