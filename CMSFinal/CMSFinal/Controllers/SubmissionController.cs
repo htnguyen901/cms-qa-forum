@@ -46,7 +46,7 @@ namespace CMSFinal.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CategoryId,CategoryName")] Submission submission)
+        public ActionResult Create([Bind(Include = "SubmissionId,SubmissionName,SubmissionDescription, ClosureDate, FinalClosureDate")] Submission submission)
         {
             if (ModelState.IsValid)
             {
