@@ -23,6 +23,7 @@ namespace CMSFinal.Models
         public int SubmissionId { get; set; }
         public string SubmissionName { get; set; }
         public string SubmissionDescription { get; set; }
+
         public Nullable<System.DateTime> ClosureDate { get; set; }
         public Nullable<System.DateTime> FinalClosureDate { get; set; }
     
