@@ -15,12 +15,17 @@
         <th>
             @Html.DisplayNameFor(model => model.SubmissionName)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmissionDescription)
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                <b>@Html.DisplayFor(modelItem => item.SubmissionName) </b>
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SubmissionDescription)
             </td>
