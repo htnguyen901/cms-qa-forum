@@ -11,6 +11,7 @@ namespace CMSFinal.Areas.QaManager.Controllers
         // GET: QaManager/Home
         public ActionResult Index()
         {
+
             return View();
         }
     }
