@@ -1,5 +1,6 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using System.Linq;
 
 [assembly: OwinStartupAttribute(typeof(CMSFinal.Startup))]
 namespace CMSFinal
@@ -9,6 +10,10 @@ namespace CMSFinal
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+
         }
+
+
     }
+
 }

@@ -35,6 +35,7 @@ namespace CMSFinal.Controllers
             return View(category);
         }
 
+
         // GET: Category/Create
         public ActionResult Create()
         {

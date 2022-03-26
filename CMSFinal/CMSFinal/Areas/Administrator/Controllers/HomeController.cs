@@ -8,6 +8,7 @@ namespace CMSFinal.Areas.Administrator.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize(Roles="Admin")]
         // GET: Administrator/Home
         public ActionResult Index()
         {
