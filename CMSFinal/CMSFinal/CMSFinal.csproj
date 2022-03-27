@@ -172,16 +172,17 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
     <Compile Include="Areas\Administrator\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\DepartmentsController.cs" />
     <Compile Include="Areas\Administrator\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\UserController.cs" />
     <Compile Include="Areas\QaCoordinator\Controllers\HomeController.cs" />
     <Compile Include="Areas\QaCoordinator\QaCoordinatorAreaRegistration.cs" />
     <Compile Include="Areas\QaManager\Controllers\HomeController.cs" />
     <Compile Include="Areas\QaManager\QaManagerAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IdeasController.cs" />
+    <Compile Include="Controllers\IdeaController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="CustomAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -230,7 +231,7 @@
     <Compile Include="Models\Idea.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Reaction.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
@@ -295,6 +296,14 @@
     <Content Include="Areas\QaCoordinator\Views\web.config" />
     <Content Include="Areas\QaCoordinator\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\QaCoordinator\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\Departments\Create.cshtml" />
+    <Content Include="Areas\Administrator\Views\Departments\Delete.cshtml" />
+    <Content Include="Areas\Administrator\Views\Departments\Details.cshtml" />
+    <Content Include="Areas\Administrator\Views\Departments\Edit.cshtml" />
+    <Content Include="Areas\Administrator\Views\Departments\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\User\QaManager.cshtml" />
+    <Content Include="Areas\Administrator\Views\User\QaCoordinator.cshtml" />
+    <Content Include="Areas\Administrator\Views\User\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -345,23 +354,19 @@
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
-    <Content Include="Views\Ideas\Create.cshtml" />
-    <Content Include="Views\Ideas\Delete.cshtml" />
-    <Content Include="Views\Ideas\Details.cshtml" />
-    <Content Include="Views\Ideas\Edit.cshtml" />
-    <Content Include="Views\Ideas\Index.cshtml" />
+    <Content Include="Views\Idea\Create.cshtml" />
+    <Content Include="Views\Idea\Delete.cshtml" />
+    <Content Include="Views\Idea\Details.cshtml" />
+    <Content Include="Views\Idea\Edit.cshtml" />
+    <Content Include="Views\Idea\Index.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
-    <Content Include="Views\Department\Create.cshtml" />
-    <Content Include="Views\Department\Delete.cshtml" />
-    <Content Include="Views\Department\Details.cshtml" />
-    <Content Include="Views\Department\Edit.cshtml" />
-    <Content Include="Views\Department\Index.cshtml" />
     <Content Include="Views\AuthorizeFailed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administrator\Data\" />
+    <Folder Include="Areas\Administrator\Views\Base\" />
     <Folder Include="Areas\QaCoordinator\Data\" />
     <Folder Include="Areas\QaManager\Data\" />
     <Folder Include="Areas\QaManager\Views\Shared\" />

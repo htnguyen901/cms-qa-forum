@@ -1,8 +1,7 @@
-﻿@{
+﻿@model IEnumerable<CMSFinal.Models.Idea>
+@{
     ViewBag.Title = "Home Page";
 }
-
-@model IEnumerable<CMSFinal.Models.Idea>
 
 @{
     ViewBag.Title = "Index";
@@ -36,7 +35,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Category.CategoryName)
-        </th>        
+        </th>
         <th></th>
     </tr>
 
@@ -67,8 +66,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Submission.SubmissionName)
             </td>
-            <td>               
-                @Html.ActionLink("Details", "Details", new { id = item.IdeaId })        
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.IdeaId })
             </td>
         </tr>
     }
