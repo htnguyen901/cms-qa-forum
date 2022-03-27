@@ -12,9 +12,14 @@ namespace CMSFinal.Areas.Administrator.Controllers
     {
         private CMSEntities db = new CMSEntities();
         // GET: Administrator/User
+
+        public ActionResult Index()
+        {
+            return View();
+        }
         public ActionResult QaManager() //Publicly get action of 'Trainer' to set in other files
         {
-            List<AspNetUser> Trainers = new List<AspNetUser>();
+            List<AspNetUser> Managers = new List<AspNetUser>();
             var role = db.AspNetRoles
                 .Where(r => r.Name == "QAManager")
                 .FirstOrDefault();
