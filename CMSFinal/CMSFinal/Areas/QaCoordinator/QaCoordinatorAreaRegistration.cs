@@ -17,8 +17,8 @@ namespace CMSFinal.Areas.QaCoordinator
             context.MapRoute(
                 "QaCoordinator_default",
                 "QaCoordinator/{controller}/{action}/{id}",
-                new { action = "Index", Controller = "QACoordinator", id = UrlParameter.Optional }
-                //namespaces: new[] { "CMSFinal.Areas.QACoordinator.Controllers" }
+                new { action = "Index", Controller = "Home", id = UrlParameter.Optional },
+                namespaces: new[] { "CMSFinal.Areas.QaCoordinator.Controllers" }
             );
         }
     }

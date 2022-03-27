@@ -173,6 +173,7 @@
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
     <Compile Include="Areas\Administrator\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Administrator\Controllers\HomeController.cs" />
+    <Compile Include="Areas\QaCoordinator\Controllers\HomeController.cs" />
     <Compile Include="Areas\QaCoordinator\QaCoordinatorAreaRegistration.cs" />
     <Compile Include="Areas\QaManager\Controllers\HomeController.cs" />
     <Compile Include="Areas\QaManager\QaManagerAreaRegistration.cs" />
@@ -292,6 +293,8 @@
     <Content Include="Areas\QaManager\Views\web.config" />
     <Content Include="Areas\QaManager\Views\Home\Index.cshtml" />
     <Content Include="Areas\QaCoordinator\Views\web.config" />
+    <Content Include="Areas\QaCoordinator\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\QaCoordinator\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -359,9 +362,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administrator\Data\" />
-    <Folder Include="Areas\QaCoordinator\Controllers\" />
     <Folder Include="Areas\QaCoordinator\Data\" />
-    <Folder Include="Areas\QaCoordinator\Views\Shared\" />
     <Folder Include="Areas\QaManager\Data\" />
     <Folder Include="Areas\QaManager\Views\Shared\" />
   </ItemGroup>
