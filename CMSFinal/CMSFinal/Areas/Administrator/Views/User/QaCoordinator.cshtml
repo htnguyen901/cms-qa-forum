@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CMSFinal.Models.AspNetUser>
+﻿@model IEnumerable<CMSFinal.ViewModels.UserDepartmentRole>
 @{
     ViewBag.Title = "QaCoordinator";
     Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
@@ -19,6 +19,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentName)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

@@ -20,6 +20,11 @@ namespace CMSFinal.Models
 
     public class ApplicationDbContext : IdentityDbContext<IdentityModel>
     {
+        public DbSet<AspNetUser> AspNetUsers { get; set; }
+
+        public DbSet<Department> Departments { get; set; }
+
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

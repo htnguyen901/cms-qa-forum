@@ -142,40 +142,64 @@ namespace CMSFinal.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            if (User.IsInRole("QACoordinator"))
+            {
+                var role = Db.Roles
+                    .Where(r => r.Name == "Staff")
+                    .ToList();
+                ViewBag.Role = new SelectList(Db.Roles, "Name", "Name");
+                return View();
+            }
+            if (User.IsInRole("Administrator"))
+            {
+                var role = Db.Roles
+                    .Where(r => r.Name == "QAManager")
+                    .ToList();
+                var trainrole = Db.Roles
+                    .Where(r => r.Name == "QACoordinator")
+                    .FirstOrDefault();
+                role.Add(trainrole);
+                ViewBag.Role = new SelectList(Db.Roles, "Name", "Name");
+                return View();
+            }
+            ViewBag.Department = new SelectList(Db.Departments, "Name", "Name");
+            ViewBag.Role = new SelectList(Db.Roles, "Name", "Name");
             return View();
         }
+
+        private bool userExist(string id) { return Db.Users.Any(x => x.Id == id); }
 
         //
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(RegisterViewModel model, AspNetUser user)
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityModel { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                if (!userExist(user.Id))
                 {
-                    //Temp code
+                    user = new AspNetUser
+                    {
+                        Email = model.Email,
+                        PasswordHash = model.Password,
+                        UserName = model.Email,
+                        DepartmentId = model.Department.DepartmentId
+                    };
 
-
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    return RedirectToAction("Index", "Home");
+                    Db.AspNetUsers.Add(user);
+                    Db.SaveChanges();
                 }
-                AddErrors(result);
-            }
+                else
+                {
+                    ModelState.AddModelError("", "Invalid login attempt.");
+                }
 
-            // If we got this far, something failed, redisplay form
-            return View(model);
+            }
+                // If we got this far, something failed, redisplay form
+                ViewBag.Role = new SelectList(Db.Roles, "Name", "Name");
+                return View(model);
         }
 
         //

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CMSFinal.Models;
+using CMSFinal.ViewModels;
 using Microsoft.AspNet.Identity;
 
 namespace CMSFinal.Areas.Administrator.Controllers
@@ -17,7 +18,7 @@ namespace CMSFinal.Areas.Administrator.Controllers
         {
             return View();
         }
-        public ActionResult QaManager() //Publicly get action of 'Trainer' to set in other files
+        public ActionResult QaManager() //Publicly get action of 'QA Manager' to set in other files
         {
             List<AspNetUser> Managers = new List<AspNetUser>();
             var role = db.AspNetRoles
@@ -33,9 +34,8 @@ namespace CMSFinal.Areas.Administrator.Controllers
             return View();
         }
 
-        public ActionResult QaCoordinator() //Publicly get action of 'TrainingStaff' to set in other files
+        public ActionResult QaCoordinator() //Publicly get action of 'QACo' to set in other files
         {
-            List<AspNetUser> Trainers = new List<AspNetUser>();
             var role = db.AspNetRoles
                 .Where(r => r.Name == "QACoordinator")
                 .FirstOrDefault();

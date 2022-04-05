@@ -79,6 +79,10 @@ namespace CMSFinal.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public Department Department { get; set; }
+
+        public AspNetRole AspNetRole { get; set; }
     }
 
     public class ResetPasswordViewModel
